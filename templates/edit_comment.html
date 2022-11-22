@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block extra_title %}- Edit Comment{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col">
+                <h2 class="logo-font text-white text-center">{{ user.name }} 
+                </h2>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="h-100">
+    <div class="col-sm col-md-8 offset-md-2 p-2 my-5">
+        <form  method="POST" class="form" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form |crispy }}
+            <input class="btn-standard" type="submit" value="Update">
+            <a class="btn btn-standard" href="{% url 'blog' %}">Cancel</a>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

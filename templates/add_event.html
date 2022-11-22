@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}{{ post.title }}{% endblock %}
+{% load cloudinary %}
+{% block content %}
+<div>
+                {% if submitted %}
+                <p>Your Event Was Submitted Successfully</p>
+
+                    {% else %}
+    <div class="container">
+        <div class="row">
+            <div class="col offset-md-1">
+                <h1>Add Event</h1>
+                <br/><br/>
+
+                <form action="" method="POST" style="margin-top: 1.3em;" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    {{ form.as_p}}
+                    <input type="submit" value="Submit" class="btn btn-standard">
+                </form>
+                {% endif %}
+                <br/><br/>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

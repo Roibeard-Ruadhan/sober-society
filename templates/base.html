@@ -1,0 +1,148 @@
+{% load static %}
+{% load cloudinary %}
+
+<!DOCTYPE html>
+<html class="h-100">
+<head>
+    <title>{% block title %} Alcohol Free Ireland {% endblock %}</title>
+    <link rel="stylesheet" href="aos-by-red.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="shortcut icon" type="image/png" href="https://res.cloudinary.com/roibeard/media/favicon-gin.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Convergence&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://kit.fontawesome.com/e7d40c6c15.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+</head>
+<body id="page-top">
+    <!-- Navigation-->
+    <header>
+        <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'home' %}">
+                    <img src='https://res.cloudinary.com/roibeard/media/logo.png' alt="Logo Image" width="60" height="48">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">
+                            <i class="fas fa-home"></i> Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="{% url 'blog' %}" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-book"></i> Blog
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu bg-dark" aria-labelledby="navbarScrollingDropdown">
+                            <li><a class="dropdown-item text-white" href="{% url 'blog' %}">Blog</a></li>
+                            <li><a class="dropdown-item text-white" href="{% url 'add_blog' %}">Add Blog</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="{% url 'events' %}" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-glass-martini-alt"></i> Events
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu bg-dark" aria-labelledby="navbarScrollingDropdown">
+                            <li><a class="dropdown-item text-white" href="{% url 'events' %}">Events</a></li>
+                            <li><a class="dropdown-item text-white" href="{% url 'add-event' %}">Add Event</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}"><i class="fas fa-envelope-open"></i> Contact</a>
+                        </li>
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_logout' %}"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'account_signup' %}"><i class="fas fa-user-plus"></i> Signup</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'account_login' %}"><i class="fas fa-sign-in-alt"></i> Login</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                    {{ message | safe }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <main class="flex-shrink-0 main-bg">
+        {% block content %}
+        
+        {% endblock content %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-footer">
+            <!-- Gutter changed to zero due to white space of 1.5rem on the right side of screen view -->
+            <div class="row g-0">
+                <div class="footer-col">
+                    <h4>Alcohol Free Ireland</h4>
+                    <ul>
+                        <li><a href="{% url 'home' %}"><i class="fas fa-home"></i>  Home</a></li>
+                        <li><a href="{% url 'blog' %}"><i class="fas fa-book"></i> Blog</a></li>
+                        <li><a href="{% url 'events' %}"><i class="fas fa-glass-martini-alt"></i> Events</a></li>
+                <!--    <li><a href="#">Login</a></li> -->
+                    </ul>
+
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-phone"></i> Ph:555671342</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Address: Lovely place</a></li>
+                        <li><a href="{% url 'contact' %}"><i class="fas fa-envelope-open"></i> Contact Page</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="facebook.com"><i class="fab fa-facebook-f"></i></a>
+                        <a href="twitter.com"><i class="fab fa-twitter"></i></a>
+                        <a href="instagram.com"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyrights -->
+      <div class="text-center justify-content-center">
+        <div>
+          <p class="text-muted mb-0 py-2">© 2022 Roibeard_Ruadhan All rights reserved.</p>
+          <!-- <p class="text-muted mb-0">Educational Purposes Only.</p> -->
+        </div>
+      </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js'
+        integrity='sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4' crossorigin='anonymous'>
+    </script>
+    <script>setTimeout(function () {
+        let messages = document.getElementById('msg');
+        let alert = new bootstrap.Alert(messages);
+        alert.close();
+    }, 3000);
+    </script>
+</body>
+
+</html>

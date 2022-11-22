@@ -1,0 +1,14 @@
+- Getting logo setup using adobe free logo, struggled getting the right size & switched to transparent for clear visual on dark navbar
+- added static before image inside curly brackets to resolve logo image path after some struggle
+- Real struggle with what to do next, if I had a plan of what to do next, I would do it, I guess using the MVP process on each
+- finally resolved comment 404 error due to indentation error in the class PostDetail() inside blog.views :) (thanks to guidance from Tutor legends)
+- adding date picker to add event
+- trouble with non users adding content resolved using @login...
+- white space resolved by adding g-0 beside call = Row on the footer. This affected all pages due to bootstrap gutter having a - - bs-guttrr-x=1.5 rem. phew
+- events plural in the event.models was plural & name eventss. Nane change using Class Meta: Verbose_name_plural, method
+- tested user experience on my phone & got a server error 500 for adding myself to an event.
+- removed number of guests from list for adding event due to unnecessary complications for unnecessary purpose for now
+- fixed icon size by finding the icon css class name in browser inspect
+- fixed video by using embed code copied from YouTube by clicking share under YouTube video & copying the embed share code. Made YouTube video responsive by adding bootstrap classes. - Eventually I had to shrink the image as none if the above worked.
+- click user button to confirm you are a guest. The organizer of the even may remain incognito
+- Getting hero image working on deployed page by moving the images from static files to media

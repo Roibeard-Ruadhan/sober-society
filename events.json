@@ -1,0 +1,107 @@
+[
+    {
+       "model":"events.events",
+       "pk":1,
+       "fields":{
+          "location":"Dublin",
+          "venue":"MVP (Cocktails)",
+          "venue_image":"image/upload/v1655066984/p8jkngufu6el6nrzkfcd.jpg",
+          "event_date":"2022-03-26",
+          "description":"Great to see some of you at the MVP on Mocktail Sundays, at 6pm",
+          "approve":true,
+          "guests":[
+             10
+          ]
+       }
+    },
+    {
+       "model":"events.events",
+       "pk":2,
+       "fields":{
+          "location":"Dublin",
+          "venue":"Church bar",
+          "venue_image":"image/upload/v1655066952/ibmel87fxc6z7k6b8d0u.jpg",
+          "event_date":"2022-02-27",
+          "description":"Arrive at 7pm ,tonnes of non alc options in the Church",
+          "approve":true,
+          "guests":[
+             10
+          ]
+       }
+    },
+    {
+       "model":"events.events",
+       "pk":5,
+       "fields":{
+          "location":"Galway city",
+          "venue":"Tigh Neachtain",
+          "venue_image":"image/upload/v1655066929/lvp0mg5ulpa6gj8drdqb.jpg",
+          "event_date":"2022-02-16",
+          "description":"See you guys there at 6pm. Food will be served at 7. Looking forward to it",
+          "approve":true,
+          "guests":[
+             10
+          ]
+       }
+    },
+    {
+       "model":"events.events",
+       "pk":19,
+       "fields":{
+          "location":"Tipperary",
+          "venue":"The Derg Inn",
+          "venue_image":"image/upload/v1655066901/vonokzxy32142ex4bbcm.jpg",
+          "event_date":"2022-04-09",
+          "description":"8pm in the Derg with live music planned. Looking forward to meeting a few more Soberista's",
+          "approve":true,
+          "guests":[
+             10
+          ]
+       }
+    },
+    {
+       "model":"events.events",
+       "pk":22,
+       "fields":{
+          "location":"Dublin",
+          "venue":"The Virgin Mary",
+          "venue_image":"image/upload/v1655066878/tnxm5q3yyy3kuzbzdz6o.jpg",
+          "event_date":"2022-03-25",
+          "description":"Meet at 7pm at Irelands official non-alcohol drinks bar. See you there!",
+          "approve":true,
+          "guests":[
+             10
+          ]
+       }
+    },
+    {
+       "model":"events.events",
+       "pk":23,
+       "fields":{
+          "location":"Donegal",
+          "venue":"The Central Bar",
+          "venue_image":"image/upload/v1655066800/bzfixzqlm2nl4qvbsajw.jpg",
+          "event_date":"2022-06-17",
+          "description":"Hi all, fancy joining for some drinks at Central on Friday 6.30pm",
+          "approve":true,
+          "guests":[
+             10
+          ]
+       }
+    },
+    {
+       "model":"events.events",
+       "pk":26,
+       "fields":{
+          "location":"test event",
+          "venue":"test venue",
+          "venue_image":"image/upload/v1655126879/u5xchq4edvyxnipu8wbh.jpg",
+          "event_date":"2022-03-17",
+          "description":"Testing",
+          "approve":true,
+          "guests":[
+             10
+          ]
+       }
+    }
+ ]

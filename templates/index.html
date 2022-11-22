@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% load cloudinary %}
+{% load static %}
+{% block content %}
+
+<header>
+    <div class="hero py-5 bg-image-full hero-image">
+        <div class="columns is-mobile is-justify-content-center">
+            <div class="position-center">
+                <img src='https://res.cloudinary.com/roibeard/media/logo.png' alt="Logo Image" width="280" height="220">
+                <h1 class="text-white fs-3 fw-bolder">SOBER SOCIETY</h1>
+                        <a href="{% url 'blog' %}" class="btn bouncy text-link">Blog</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a class="btn btn bouncy text-link" href="{% url 'events' %}">Events</a><br>
+            </div>
+            <div class="position-center">
+                <form>
+                    {% if not request.user.is_authenticated %}
+                    <a href="{% url 'account_signup' %}" type="button" class="btn btn-success px-3">
+                        <i aria-hidden="true"></i>  JOIN US   <i class="far fa-hand-point-right" aria-hidden="true"></i></a>
+                    {% endif %}
+                </form>
+            </div> 
+        </div>
+    </div>
+</header>
+<!-- Content section-->
+<section>
+    <div class="container dark bg">
+        <div class="row">
+            <div class="col-12 col-md-4" data-aos="fade-right">
+                <a href="{% url 'blog' %}" class="links">
+                    <img src="https://res.cloudinary.com/roibeard/media/blog.png"  class="rounded-circle image-circle col-4" alt="Blog page image introduction" />
+                </a>
+            </div>
+            <div class="col-12 col-md-8 text-center" style="margin-top: 3rem;">
+                <h2 data-aos="fade-left">Check out the Blog</h2>
+                <p class="lead" data-aos="fade-left">A place to add your experience with Alcohol Free Drinks</p> <br>
+                <p class="mb-0" data-aos="fade-left">To share a variety of stories from drink reviews, dry January, to times of soberiety. Approximately 20-25% of the population of Ireland 
+                    do not drink alcohol & often feel left out of weekend/social gatherings. <br><br><br>
+                    <p data-aos="fade-left">Have you enjoyed any non alcohol drinks recently that you would like to share your experience of, feel free to share in the blog</p> 
+                    <br>
+                   <p data-aos="fade-left"> Many people are quietly considerning taking a break from alcohol & it would be great for them to have a space to learn more about other peoples 
+                    experiences with this. </p>
+                   <p data-aos="fade-left">The Blog provides that space & more. A space for people to share there good & bad experiences with time away from alcohol.</p><br>
+            </p></div>
+        </div>
+    </div>
+</section>
+<!-- Image element -->
+<section>
+    <div class="blog-body bg-image-full blog-image">
+        <div class="position-center" data-aos="fade-up">   
+            <h1 class="text-white">CREATE A BLOG HERE</h1>
+            <a href="{% url 'add_blog' %}" type="button" class="btn btn-success px-3">
+                <i class="fa-regular fa-champagne-glasses"></i>  CREATE BLOG  <i class="far fa-hand-point-right" aria-hidden="true"></i></a>
+        </div>
+    </div>
+</section>
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-8 text-center" style="margin-top: 3rem;">
+                <h2 data-aos="fade-right">Check out our Events Page</h2>
+                <p class="lead" data-aos="fade-right">A place to set up & join Alcohol Free Events in your locality</p><br>
+                <p class="mb-0" data-aos="fade-right">Are you the only one in your local communtiy who enjoys a non-alcoholic 
+                    drink & find it hard to find people to join you? </p><br>
+                <p data-aos="fade-right">You have come to the right place. Here you can find out by looking through the open 
+                    Events available if there is one near you. </p>
+                <p data-aos="fade-right">If you do not find any in your area, look no further as you also have the option of setting an event in your town or county.</p><br>
+            </div>
+            <div class="col-12 col-md-4" data-aos="fade-left">
+                <a class="links" href="{% url 'events' %}">
+                    <img src='https://res.cloudinary.com/roibeard/media/events.jpg' class="img-fluid rounded-circle mb-1 image-circle" alt="Events page image introduction" />
+                </a> 
+            </div>
+        </div>
+    </div>
+</div>
+<section>
+    <div class="events-body bg-image-full events-image" data-aos="fade-up">
+        <div class="position-center">  
+            <h1 class="text-white" data-aos="zoom-in">CREATE AN EVENT HERE</h1>
+            <a href="{% url 'add-event' %}" type="button" class="btn btn-success px-3">
+                <i class="fa-regular fa-champagne-glasses"></i>  ADD EVENT  <i class="far fa-hand-point-right" aria-hidden="true"></i></a>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="col text-center" style="margin-top: 2rem;">
+            <div class="position-center">
+                <h2 data-aos="fade-down">Becoming More Widespread</h2>
+                    <p data-aos="fade-down">It can still very much be a touchy subject when people first hear of somebody abstaining from alcohol. It has always played
+                       a huge role in many cultures across the world, specifically on social occasions. As per the video below, non alcoholic drinks 
+                       are becoming more accepeted & even more appealing every day.</p> <p data-aos="fade-down"> Walking into supermarkets now you can't help but realise, almost 
+                       every week a new drink is added. Every month a new shelf is added to the non-alcohol drinks section. It is gradually taking over 
+                       the whole supermarket one day at a time.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div data-aos="zoom-in" style="margin-top: 2rem;">
+        <div class="position-center embed-responsive embed-responsive-16by9 video-container">
+            <iframe class="embed-responsive-item" width="320" height="315" src="https://www.youtube.com/embed/5wgvpo-xBnA" 
+            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+            gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 3000,
+        once: true,
+      });
+    </script>
+
+{%endblock%}

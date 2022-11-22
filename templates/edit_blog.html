@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load cloudinary %}
+{% load static %}
+
+{% block extra_title %}- {{ blog_post.title }}{% endblock %}
+
+{% block page_header %}
+    <div class="header-container container">
+        <div class="row">
+            <div class="col">
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container text-white">
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col page-heading text-center">
+                <h1 class="heading">Edit Blog</h1>
+            </div>
+        </div>
+    
+
+        <div class="row">
+            <div class="col-12 col-md-8 offset-md-2">
+                <h3 class='sub-heading text-center'>Edit Your Blog Post</h3>
+                <div>
+                    <!-- Edit Blog Form -->
+                    <form action="{% url 'edit_blog' blog_post.id %}" method="POST" class="form" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <div class="text-end">
+                            <!-- Cancel Button -->
+                            <a href="{% url 'blog' %}" class="btn btn-standard">
+                                <span class="p-text text-bold">Cancel</span>
+                            </a>
+                            <!-- Submit Button -->
+                            <button id="submit-button" class="btn btn-standard">
+                                <span class="p-text text-bold">Update Blog Post</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+   <!-- JS for changing the image -->
+    <script src="{% static 'blog/js/image_change.js' %}"></script>
+
+{% endblock %}

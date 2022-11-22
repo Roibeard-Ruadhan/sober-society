@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load static%}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col">Delete Event</div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div>
+    <div class="col-sm col-md-8 offset-md-2 my-5 bg-light">
+        <form class="delete-form" method="POST">{% csrf_token %}
+            <p style="color: black;">Are you sure you want to delete this event?</p>
+            <button class="btn btn-standard" aria-label="delete event" type="submit">Delete</button>
+            <a class="btn btn-standard" href="{% url 'events' %}">Cancel</a>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

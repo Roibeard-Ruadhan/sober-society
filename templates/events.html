@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block title %} Alcohol Free Ireland Blogs {% endblock %}
+{% load static %}
+{% load cloudinary %}
+{% block content %}
+
+
+
+<div class="container-fluid main-bg">
+    <div class="col text-center" data-aos="flip-up">
+        <a href="{% url 'add-event' %}" type="button" class="btn btn-standard bouncy justify-content-center">
+        <i class="fas fa-users" aria-hidden="true"></i>  ADD EVENT HERE  <i class="fas fa-users" aria-hidden="true"></i></a>
+    </div>
+    <div class="row">
+
+        <!-- Blog Entries Column -->
+        <div class="col-12 mt-3 left">
+            <div class="row">
+                
+                {% for events in events_list %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <div class="image-container card card-cascade narrower" data-aos="zoom-in">
+                                        {% if "placeholder" in events.venue_image.url %}
+                                        <img class="card-img-top view view-cascade overlay"
+                                            src='{{ MEDIA_URL }}strawberry.jpg'>
+                                        {% else %}
+                                        <img class="card-img-top" src=" {{ events.venue_image.url }}">
+                                        {% endif %}
+                                        <div class="image-flash" data-aos="fade-left">
+                                            <h2 class="card-title">{{ events.venue }}</h2>
+                                        </div>
+                                        <div class="image-flash-2" data-aos="fade-right">
+                                            <p class="label">Location: {{ events.location }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr/>
+                            <p class="card-text" data-aos="fade-right">{{ events.description }}</p>
+
+                            
+                            <form class="d-line" action="{% url 'post_event' events.location %}" method="POST">
+                                {% csrf_token %}
+                               
+                            <p class="card-text" data-aos="fade-right">Click icon to Confirm Attending: <button type="submit" name="blogpost_id" 
+                            value="{{events.location}}" class="btn-like"><i class="far fa-user"></i> <span class="guests_num">{{events.number_of_guests}}</span></button></p>
+                        
+                            </form>
+<!-- List of how many guests have confirmed will be attending each event --> 
+
+                            <p data-aos="fade-left"> Guests attending:</p>
+                            {% for guests in events.guests.all %}
+                            <ul class="list-inline-item list">
+                                {% if guests %}
+                                 <li data-aos="fade-right">• {{ guests }}</li>
+                                 {% else %}
+                                 <li> Empty </li>
+                                {% endif %}
+                            </ul>
+        
+                            {% endfor %}
+                           
+                            <p class="card-text small" data-aos="fade-up">Event date: {{ events.event_date}}</p>
+                        </div>
+                    </div>
+                    {% if events.creator == request.user or request.user.is_superuser %}
+                        <a href="{% url 'edit_event' events.id  %}" class="btn btn-standard">Edit</a>
+                        <a href="{% url 'delete_event' events.id  %}" class="btn btn-standard">Delete</a>
+                    {% endif %}
+                </div>
+                {% if forloop.counter|divisibleby:3 %}
+            </div>
+            <div class="row">
+                {% endif %}
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+</div>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 3000,
+        once: true,
+      });
+    </script>
+{%endblock%}

@@ -1,0 +1,582 @@
+@import url('https://fonts.googleapis.com/css2?family=Convergence&display=swap');
+*{
+	box-sizing: border-box;
+}
+
+body {
+    color: #F4E9CD;
+    background-color: #5E0B15;
+    font-family: 'Convergence', sans-serif;
+    margin:0;
+	padding:0;
+    max-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+}
+
+a {
+    color: #F4E9CD;
+}
+
+.brand {
+    font-family: 'Convergence', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.light-bg {
+    background-color: #031926;
+    color: #F4E9CD;
+}
+
+.main-bg {
+    /* background-color: #8E4A49; */
+    background-color:#5E0B15;
+}
+
+.card {
+    border: none;
+    background-color: transparent;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 30vw;
+    object-fit: cover;
+}
+
+.image-container {
+    position: relative;
+}
+
+.image-flash {
+    color: #FFF;
+    position: absolute;
+    bottom: 0%;
+    min-width: 30%;
+    left: -4px;
+    background-color: #F4E9CD;
+    padding: 5px;
+}
+
+.image-flash-2 {
+    position: absolute;
+    top: 0%;
+    min-width: 30%;
+    right: -4px;
+    background-color: #F4E9CD;
+    padding: 5px;
+}
+
+.label {
+    color: rgb(0, 0, 0);
+    margin: 4px;
+    text-transform: uppercase;
+}
+/* Blog_detail page */
+.masthead {
+    margin-top: 10px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    height: 33vh;
+    width: 100%;
+}
+
+.masthead-text {
+    background-color: #5E0B15;
+    color: white;
+    position: relative;
+}
+
+.masthead-image {
+    position: relative;
+    overflow: hidden;
+    height: auto;
+}
+
+.masthead-image img {
+    position: relative;
+    overflow: hidden;
+}
+
+.masthead-image:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 90%;
+    height: 100%;
+    width: 150%;
+    background: #5E0B15;
+    -webkit-transform: skew(15deg);
+    -moz-transform: skew(15deg);
+    transform: skew(15deg);
+    z-index: 100;
+}
+
+.row {
+    --bs-gutter-x: 0rem;
+}
+
+.comment-body {
+    padding: 2rem;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+.blog_content {
+    color: #fff !important;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+.post-link {
+    text-decoration: none;
+    color: #F4E9CD;
+}
+
+.post-link:hover,
+.page-link:hover {
+    color: #000000;
+    background: #F4E9CD;
+    text-decoration: none;
+}
+
+.post-title {
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.post-subtitle {
+    margin-left: 5%;
+    color: #F4E9CD;
+}
+
+.btn-signup {
+    background-color: #F4E9CD;
+    color: #fff;
+}
+
+.btn-signup:hover,
+.btn-signup:active {
+    background-color: #031926;
+    color: #5E0B15;
+}
+
+.btn-standard {
+    margin: 1rem;
+    color: #F4E9CD;
+    background-color:#031926;
+}
+
+.btn-standard:hover {
+    background-color: #F4E9CD;
+    color: #5E0B15;
+    border: 1px solid #000;
+    text-decoration: none;
+}
+
+.btn-nonstandard {
+    margin: 1rem;
+    color: #031926;
+    background-color:#F4E9CD;
+}
+
+.btn-nonstandard:hover {
+    background-color: #5E0B15;
+    color: #F4E9CD;
+    border: 1px solid #000;
+    text-decoration: none;
+}
+
+.link {
+    color: #F4E9CD;
+    text-decoration: none;
+}
+
+.link:hover,
+.link:active {
+    color: #5E0B15;
+    text-decoration: underline;
+}
+
+.btn-like {
+    color: #E84610;
+    border: none;
+    background: transparent;
+}
+
+.btn-like:hover,
+.btn-like:active {
+    color: #E84610;
+    background: transparent;
+    border: none;
+}
+
+
+
+
+/* Hero image */
+.hero-body {
+    padding: 0;
+    background-color: #031926;
+}
+
+.hero-image {background: linear-gradient(rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.1)), url('https://res.cloudinary.com/roibeard/media/bar.jpg') no-repeat top center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 80vh;
+    object-fit: contain;
+    position: relative;
+}
+
+.btn-success {
+    background: #5E0B15;
+    color: #fff;
+    border: 1px solid #000;
+}
+
+.btn-success:hover {
+    background: #031926;
+    color: #fff;
+    border: 1px solid #fff;
+    text-decoration: none;
+}
+
+@keyframes bounce {
+	0%, 20%, 60%, 100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+
+	40% {
+		-webkit-transform: translateY(-20px);
+		transform: translateY(-20px);
+	}
+
+	80% {
+		-webkit-transform: translateY(-10px);
+		transform: translateY(-10px);
+	}
+}
+
+.bouncy:hover {
+	animation: bounce 1s;
+}
+
+.text-link {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 600;
+    border-radius: 25px;
+    border: 2px #fff;
+}
+.text-link:hover {
+    color: white;
+    background-color: #5E0B15;
+    text-decoration: none !important;
+}
+
+.links:hover {
+    transform: scale(1.1);
+    color: #ffffff;
+}
+
+/* -------------------------------Nav-bar */
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #F4E9CD;
+}
+
+.bg-dark {
+    background-color: #031926 !important;
+}
+
+
+.dropdown-menu:hover,
+.dropdown-item:hover {
+    background-color: #5E0B15;
+    color: #F4E9CD;
+}
+
+/* Pagination page turning links*/
+.page-link {
+    margin: 1rem;
+    color: #F4E9CD;
+    background-color:#031926;
+}
+
+
+/* Youtube video*/
+.video-container { 
+    position: relative; 
+}
+
+.signup-btn {
+    font-weight: 600;
+}
+
+/* The circular images on the home page acting as links to pages */
+.image-circle {
+    width: 100%;
+    margin-top: .25rem;
+    margin-bottom: .25rem;
+  }
+
+.image-circle:hover {
+    background-color:#ffffff;
+    border: 3px solid #dee2e6;
+    transition: color .15s ease-in-out,background-color .15s 
+    ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.events-body {
+    padding: 0;
+    background-color: #24262b;
+}
+
+.events-image {
+    background: url('https://res.cloudinary.com/roibeard/media/events.png') no-repeat center center fixed;
+    height: 50vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    max-height: fit-content;
+    object-fit: contain;
+}
+.events-link {
+    float:right;
+}
+
+.blog-body {
+    padding: 0;
+    background-color: #031926;
+}
+
+.blog-image {
+    background: url('https://res.cloudinary.com/roibeard/media/mocktails.jpg') no-repeat center center fixed;
+    height: 50vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    max-height: fit-content;
+    object-fit: contain;
+}
+.blog-link {
+    float:right;
+}
+
+.card-text {
+    color: #F4E9CD;
+}
+
+/* ul.list-inline-item .list li {
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-start; 
+   padding: 0;
+   color: hotpink;
+   white-space: nowrap;
+}  */
+
+.card-title {
+    color: #031926;
+}
+
+.position-center {
+    text-align: center;
+}
+
+/* Events Page + Blog page */
+
+.fa-user:before {
+    color: #F4E9CD;
+    font-size: x-large;
+}
+.guests_num {
+    color: #F4E9CD;
+}
+
+/* Footer */
+.container{
+	max-width:fit-content;
+	margin:0;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+
+.footer{
+	background-color: #031926;
+    line-height: 1;
+	font-family: 'Poppins', sans-serif;
+    padding: 0;
+    --bs-gutter-x: 0rem;
+}
+.footer-col{
+   width: 33%;
+   padding:20px 100px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #fff;
+	text-transform: capitalize;
+	margin-bottom: 20px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #5E0B15;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 200;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #F4E9CD;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: #5E0B15;
+	margin:0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #fff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #031926;
+	background-color:#fff;
+}
+/*Contact form */
+ul.errorlist {
+    margin: 0;
+    padding: 0;
+}
+.errorlist li {
+    border: 1px solid red;
+    color: red;
+    background: rgba(255, 0, 0, 0.15);
+    list-style-position: inside;
+    display: block;
+    font-size: 1.2em;
+    margin: 0 0 3px;
+    padding: 4px 5px;
+    text-align: center;    
+    border-radius: 3px;
+}
+
+.success {
+    background-color: rgba(0, 128, 0, 0.15);
+    padding: 10px;
+    text-align: center;
+    color: green;
+    border: 1px solid green;
+    border-radius: 3px;
+}
+
+/* Error pages 403, 404 & 500 */ 
+.mainbox {
+    background-color: #031926;
+    margin: auto;
+    height: 600px;
+    width: 600px;
+    position: relative;
+}
+
+  
+.err {
+    color: #ffffff;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 11rem;
+    position:absolute;
+    left: 20%;
+    top: 8%;
+}
+
+.error-f {
+    position: absolute;
+    font-size: 8.5rem;
+    left: 42%;
+    top: 15%;
+    color: #ffffff;
+}
+
+.err2 {
+    color: #ffffff;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 11rem;
+    position:absolute;
+    left: 68%;
+    top: 8%;
+}
+
+.msg {
+    text-align: center;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.6rem;
+    position:absolute;
+    left: 16%;
+    top: 45%;
+    width: 75%;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+        }
+        .card-img-top {
+            width: 100%;
+            height: 60vh;
+            object-fit: cover;
+        }
+}
+
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+        }
+    .card-img-top {
+        width: 100%;
+        height: 60vh;
+        object-fit: cover;
+    }
+}
